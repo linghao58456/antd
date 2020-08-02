@@ -1,29 +1,51 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import loginHome from "../components/loginHome";
+import login from "../views/loginHome/login";
+import register from "../views/loginHome/register";
+import checkUser from "../views/loginHome/checkUser";
+import forgetPwd from "../views/loginHome/forgetPwd";
+import indexHome from "../components/indexHome";
+import editChangePwd from "../views/indexHome/editChangePwd";
 
 Vue.use(VueRouter)
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+const routes = [{
+    path: "/",
+    name: "loginHome",
+    component: loginHome,
+    children: [{
+        path: "/",
+        name: "login",
+        component: login
+    }, {
+        path: "/register",
+        name: "register",
+        component: register
+    }, {
+        path: "/check",
+        name: "checkUser",
+        component: checkUser
+    }, {
+        path: "/forgetPwd",
+        name: "forgetPwd",
+        component: forgetPwd
+    }]
+}, {
+    path: "/index",
+    name: "index",
+    component: indexHome,
+    children: [{
+        path: "/changePwd",
+        name: "editChangePwd",
+        component: editChangePwd
+    }]
+}]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 export default router
