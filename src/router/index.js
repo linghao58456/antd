@@ -7,6 +7,7 @@ import checkUser from "../views/loginHome/checkUser";
 import forgetPwd from "../views/loginHome/forgetPwd";
 import indexHome from "../components/indexHome";
 import editChangePwd from "../views/indexHome/editChangePwd";
+import systemList from "../views/configurationCenter/system/systemList";
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,10 @@ const routes = [{
         path: "/changePwd",
         name: "editChangePwd",
         component: editChangePwd
+    }, {
+        path: "/systemConfig/list",
+        name: "systemConfigList",
+        component: systemList
     }]
 }]
 

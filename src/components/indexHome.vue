@@ -36,7 +36,7 @@
     }
 
     #side {
-        background-color: yellow;
+        background-color: white;
         height: 91%;
         position: absolute;
     }

@@ -106,7 +106,7 @@ Vue.prototype.deleteCookie = function (name) {
 
 // 自定义icon图标
 Vue.component("myIcon", Icon.createFromIconfontCN({
-    scriptUrl: '//at.alicdn.com/t/font_1966076_40g5zzlphm6.js',
+    scriptUrl: '//at.alicdn.com/t/font_1966076_rksca76yvg.js',
 }))
 
 // 设置提示消息
